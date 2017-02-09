@@ -96,6 +96,15 @@
   ("C-<" . mc/mark-previous-like-this)
   ("C-c C->" . mc/mark-all-like-this))
 
+;; Multi-term
+(use-package multi-term
+  :ensure t
+  :init (setq multi-term-buffer-name "term"
+   multi-term-program "/bin/zsh")
+  :bind (("<f5>" . multi-term)
+       ("<C-next>" . multi-term-next)
+       ("<C-prior>" . multi-term-prev)))
+
 (use-package neotree
   :config
   (setq neo-theme 'arrow
@@ -138,6 +147,13 @@
   :config
   (setq recentf-save-file (recentf-expand-file-name "~/.emacs.d/private/cache/recentf"))
   (recentf-mode 1))
+
+
+;; Reveal (ox-reveal)
+(use-package ox-reveal
+  :ensure t
+  :init (setq org-reveal-root (concat "file://" (expand-file-name "~/.emacs.d/plugins/reveal.js-3.4.1/js/reveal.js"))))
+
 
 (use-package smartparens)
 
