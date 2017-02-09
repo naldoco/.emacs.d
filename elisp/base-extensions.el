@@ -69,6 +69,11 @@
   :config
   (hlinum-activate))
 
+;; Intero
+(use-package intero
+  :ensure t)
+(add-hook 'haskell-mode-hook 'intero-mode)
+
 (use-package linum
   :config
   (setq linum-format " %3d ")
