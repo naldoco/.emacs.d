@@ -102,13 +102,16 @@
         (comment-or-uncomment-region beg end)
         (next-line)))
 (global-set-key (kbd "<f12>") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "<f7>")  'intero-add-package)
+
+(column-number-mode)
+
+;; Delete trailing whitespace before save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; RCC ends here
 
 (show-paren-mode 1)
-
-;; Delete trailing whitespace before save
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (provide 'base)
 ;;; base ends here
